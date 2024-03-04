@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "mymidjourney-client"
+version = "0.1.0"
+description = "This is a simple Python based client for the APIs exposed by https://www.mymidjourney.ai"
+authors = ["Gil Fernandes <gil.fernandes@onepointltd.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "mymidjourney_client"}]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+python-dotenv = "^1.0.1"
+requests = "^2.31.0"
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.2.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
