@@ -1,12 +1,12 @@
 # MyMidjourney Client
 
-This is a simple Python based client for the APIs exposed by https://www.mymidjourney.ai/
+git remote add origin https://github.com/onepointconsulting/mymidjourney-client.git
 
 ## Pre-requisites
 
 You will need to have a My Midjourney API, a [MyMidjourney Token](https://www.mymidjourney.ai/setup).
 
-## Ddevelopment instructions
+## Development instructions
 
 Please make sure to install [Conda](https://conda.io/projects/conda/en/latest/user-guide/install/index.html) first.
 
