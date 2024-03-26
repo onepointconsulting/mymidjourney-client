@@ -11,8 +11,12 @@ class ImagineResult:
     created_at: datetime
 
 
-def convert_from_str(json_str: str):
+def convert_from_str(json_str: str) -> ImagineResult:
     res_obj = json.loads(json_str)
+    return convert_From_json(res_obj)
+
+
+def convert_From_json(res_obj: dict) -> ImagineResult:
     return ImagineResult(
         success=res_obj["success"],
         message_id=res_obj["messageId"],

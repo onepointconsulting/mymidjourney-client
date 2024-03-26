@@ -4,16 +4,13 @@ from datetime import datetime
 from mymidjourney_client.model.error import Error
 from mymidjourney_client.model.imagine_result import ImagineResult
 from mymidjourney_client.async_client.request_support import handle_post_call
+from mymidjourney_client.model.imagine_result import convert_From_json
 
 
 async def imagine_request(prompt: str) -> Union[ImagineResult, Error]:
     res_obj = await handle_post_call({"prompt": prompt}, endpoint="imagine")
     if isinstance(res_obj, dict):
-        return ImagineResult(
-            success=res_obj["success"],
-            message_id=res_obj["messageId"],
-            created_at=datetime.fromisoformat(res_obj["createdAt"]),
-        )
+        return convert_From_json(res_obj)
     return res_obj
 
 

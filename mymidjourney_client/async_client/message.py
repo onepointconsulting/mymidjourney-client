@@ -8,15 +8,13 @@ from mymidjourney_client.model.error import Error
 from mymidjourney_client.async_client.request_support import handle_get_call
 
 
-
 async def message_request(message_id: str) -> Union[MessageResult, Error]:
     response = await handle_get_call(f"message/{message_id}")
-
     if isinstance(response, dict):
         return convert_from_obj(response)
     else:
         return response
-    
+
 
 if __name__ == "__main__":
     import asyncio
