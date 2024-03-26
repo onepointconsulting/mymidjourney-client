@@ -16,8 +16,12 @@ class MessageResult:
     updated_at: datetime
 
 
-def convert_from_str(json_str: str):
+def convert_from_str(json_str: str) -> MessageResult:
     res_obj = json.loads(json_str)
+    return convert_from_obj(res_obj)
+
+
+def convert_from_obj(res_obj: dict) -> MessageResult:
     created_at = datetime.fromisoformat(res_obj["createdAt"])
     updated_at = datetime.fromisoformat(res_obj["updatedAt"])
     return MessageResult(
